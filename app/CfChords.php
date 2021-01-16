@@ -35,4 +35,14 @@ class CfChords extends Model
     {
         return $this->hasMany(CfUserChord::class, 'chord_id', 'chord_id');
     }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'chord_id';
+    }
 }

@@ -89,8 +89,7 @@
                 <div class="links">
                     @auth
                         <a href="#">Find chords</a>
-                        <a href="#">Chord list</a>
-                        <a href="#">Favorite chords</a>
+                        <a href="{{ route('pages.chords') }}">Chords</a>
                     @else
                         <div>
                             You need a

@@ -12,9 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::resource('cf-chords', CfChordsController::class);
+
+Route::get('/chords', 'PagesController@chords')
+    ->name('pages.chords');
+
+Route::get('/find-chords', 'PagesController@find_chords')
+    ->name('pages.find-chords');
+

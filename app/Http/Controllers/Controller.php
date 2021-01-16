@@ -11,7 +11,12 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function renderVue($pageComponent, $props) {
+    /**
+     * @param string $pageComponent
+     * @param array $props
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function renderVue(string $pageComponent, array $props = []) {
         return view('vue-launcher', compact('pageComponent', 'props'));
     }
 }
